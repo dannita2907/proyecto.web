@@ -23,8 +23,6 @@ function Certificados({ usuario, epsNombre, sede, onVolver }) {
               {epsNombre} ({sede}) certifica que <strong>{usuario.nombre}</strong>, con documento{' '}
               <strong>{usuario.documento}</strong>, {tipo.texto}.
             </p>
-            <p>Expedido el {new Date().toLocaleDateString('es-CO')}</p>
-            <Boton texto="Imprimir" onClick={() => window.print()} />
           </div>
         )}
       </section>

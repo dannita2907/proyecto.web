@@ -1,0 +1,23 @@
+.tarjeta {
+    width: 200px;
+    height: 100%;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-6px);
+}
+
+.tarjeta-icono {
+    font-size: 40px;
+}
+
+.tarjeta h3 {
+    margin: 10px 0;
+    color: #0d47a1;
+}

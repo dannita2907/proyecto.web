@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "titulo": "Quiénes somos",
+    "texto": "Somos una EPS comprometida con la salud y el bienestar de nuestros afiliados."
+  },
+  {
+    "id": 2,
+    "titulo": "Misión y visión",
+    "texto": "Brindar atención oportuna y de calidad, y ser referentes en servicio al usuario."
+  },
+  {
+    "id": 3,
+    "titulo": "Contacto",
+    "texto": "Escríbenos a contacto@eps.com o visita cualquiera de nuestras sedes."
+  },
+  {
+    "id": 4,
+    "titulo": "Bienestar",
+    "texto": "Consejos y contenidos para cuidar tu salud todos los días."
+  }
+]

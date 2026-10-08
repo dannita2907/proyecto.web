@@ -1,0 +1,92 @@
+[
+  {
+    "id": "bienestar",
+    "titulo": "Bienestar",
+    "tarjetas": [
+      {
+        "titulo": "Alimentación",
+        "texto": "Come variado, con frutas y verduras todos los días."
+      },
+      {
+        "titulo": "Actividad física",
+        "texto": "Camina o haz ejercicio al menos 30 minutos al día."
+      },
+      {
+        "titulo": "Descanso",
+        "texto": "Duerme entre 7 y 8 horas para cuidar tu mente y tu cuerpo."
+      }
+    ]
+  },
+  {
+    "id": "afiliaciones",
+    "titulo": "Afiliaciones",
+    "tarjetas": [
+      {
+        "titulo": "Cómo afiliarse",
+        "texto": "Presenta tu documento y diligencia el formulario en cualquier sede."
+      },
+      {
+        "titulo": "Beneficiarios",
+        "texto": "Puedes afiliar a tu cónyuge, hijos y padres dependientes."
+      },
+      {
+        "titulo": "Traslados",
+        "texto": "Si vienes de otra EPS, solicita tu traslado en las sedes."
+      }
+    ]
+  },
+  {
+    "id": "noticias",
+    "titulo": "Noticias",
+    "tarjetas": [
+      {
+        "titulo": "Jornada de vacunación",
+        "texto": "Este mes habrá jornada de vacunación en todas las sedes."
+      },
+      {
+        "titulo": "Nueva sede",
+        "texto": "Estamos ampliando nuestra red de atención."
+      },
+      {
+        "titulo": "Citas en línea",
+        "texto": "Ahora puedes agendar tus citas desde esta página."
+      }
+    ]
+  },
+  {
+    "id": "redes",
+    "titulo": "Redes",
+    "tarjetas": [
+      {
+        "titulo": "Facebook",
+        "texto": "Síguenos como @eps.oficial"
+      },
+      {
+        "titulo": "Instagram",
+        "texto": "Síguenos como @eps.oficial"
+      },
+      {
+        "titulo": "X",
+        "texto": "Síguenos como @eps_oficial"
+      }
+    ]
+  },
+  {
+    "id": "mision",
+    "titulo": "Misión y Visión",
+    "tarjetas": [
+      {
+        "titulo": "Misión",
+        "texto": "Garantizar atención en salud oportuna, segura y de calidad a nuestros afiliados."
+      },
+      {
+        "titulo": "Visión",
+        "texto": "Ser la EPS más confiable y cercana a las personas en los próximos años."
+      },
+      {
+        "titulo": "Valores",
+        "texto": "Respeto, compromiso, transparencia y servicio."
+      }
+    ]
+  }
+]

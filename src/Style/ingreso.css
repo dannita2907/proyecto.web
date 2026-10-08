@@ -1,0 +1,25 @@
+.pantalla-ingreso {
+    background: url('../asset/fondo-azul.svg') center / cover no-repeat;
+    color: white;
+    text-align: center;
+}
+
+.caja-ingreso {
+    width: 100%;
+    max-width: 480px;
+}
+
+.caja-ingreso h2 {
+    font-size: 44px;
+    margin: 15px 0 30px;
+}
+
+.caja-ingreso input,
+.caja-ingreso select {
+    border: none;
+}
+
+.caja-ingreso button {
+    background: white;
+    color: #0d47a1;
+}

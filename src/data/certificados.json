@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "nombre": "Certificado de afiliación",
+    "texto": "se encuentra afiliado(a) activamente a la EPS"
+  },
+  {
+    "id": 2,
+    "nombre": "Certificado de vigencia de derechos",
+    "texto": "tiene vigentes sus derechos de atención en salud"
+  },
+  {
+    "id": 3,
+    "nombre": "Certificado de servicios",
+    "texto": "tiene habilitado el acceso a los servicios de la EPS"
+  }
+]

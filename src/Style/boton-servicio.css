@@ -1,0 +1,16 @@
+.boton-servicio {
+    display: block;
+    width: 280px;
+    margin: 10px auto;
+    padding: 14px 20px;
+    background: #f9f9f9;
+    border: 2px solid #003366;
+    color: #003366;
+    font-weight: bold;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.boton-servicio:hover {
+    background: #003366;
+    color: white;
+}

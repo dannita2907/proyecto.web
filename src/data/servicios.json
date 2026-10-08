@@ -1,0 +1,52 @@
+[
+  {
+    "id": "agendamiento",
+    "nombre": "Agendamiento de citas",
+    "pantalla": "agendamiento"
+  },
+  {
+    "id": "actualizacion",
+    "nombre": "Actualización de datos",
+    "pantalla": "actualizacion"
+  },
+  {
+    "id": "certificados",
+    "nombre": "Certificados",
+    "pantalla": "certificados"
+  },
+  {
+    "id": "dadaia",
+    "nombre": "Asistente DaDaIA",
+    "pantalla": "dadaia"
+  },
+  {
+    "id": "bienestar",
+    "nombre": "Contenidos para bienestar",
+    "pantalla": "informacion",
+    "pestana": "bienestar"
+  },
+  {
+    "id": "afiliaciones",
+    "nombre": "Afiliaciones",
+    "pantalla": "informacion",
+    "pestana": "afiliaciones"
+  },
+  {
+    "id": "noticias",
+    "nombre": "Noticias",
+    "pantalla": "informacion",
+    "pestana": "noticias"
+  },
+  {
+    "id": "redes",
+    "nombre": "Redes",
+    "pantalla": "informacion",
+    "pestana": "redes"
+  },
+  {
+    "id": "mision",
+    "nombre": "Misión y Visión",
+    "pantalla": "informacion",
+    "pestana": "mision"
+  }
+]

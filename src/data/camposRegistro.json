@@ -1,0 +1,38 @@
+[
+  {
+    "name": "nombre",
+    "label": "Nombre completo",
+    "type": "text",
+    "editable": true
+  },
+  {
+    "name": "documento",
+    "label": "Número de documento",
+    "type": "text",
+    "editable": false
+  },
+  {
+    "name": "fechaNacimiento",
+    "label": "Fecha de nacimiento",
+    "type": "date",
+    "editable": false
+  },
+  {
+    "name": "telefono",
+    "label": "Teléfono",
+    "type": "tel",
+    "editable": true
+  },
+  {
+    "name": "direccion",
+    "label": "Dirección",
+    "type": "text",
+    "editable": true
+  },
+  {
+    "name": "correo",
+    "label": "Correo",
+    "type": "email",
+    "editable": false
+  }
+]

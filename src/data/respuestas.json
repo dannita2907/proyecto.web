@@ -1,0 +1,37 @@
+[
+  {
+    "palabras": [
+      "hola",
+      "buenas"
+    ],
+    "respuesta": "¡Hola! ¿En qué puedo ayudarte?"
+  },
+  {
+    "palabras": [
+      "cita",
+      "agendar",
+      "medic"
+    ],
+    "respuesta": "Para agendar una cita ve a Servicios > Agendamiento de citas."
+  },
+  {
+    "palabras": [
+      "certific"
+    ],
+    "respuesta": "Puedes generar tus certificados en Servicios > Certificados."
+  },
+  {
+    "palabras": [
+      "dato",
+      "actualiz",
+      "telefono"
+    ],
+    "respuesta": "Para cambiar tus datos entra a Servicios > Actualización de datos."
+  },
+  {
+    "palabras": [
+      "afilia"
+    ],
+    "respuesta": "En Servicios > Afiliaciones encuentras cómo afiliarte."
+  }
+]

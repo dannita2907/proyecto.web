@@ -63,7 +63,7 @@ export default function useFormulario(onIniciarSesion) {
   }
 
   // En login solo se piden correo y contraseña
-  const camposVisibles = modo === 'login' ? campos.filter((c) => c.name === 'correo') : campos
+   const enviar = modo === 'login' ? iniciar : registrar
 
-  return { modo, datos, error, camposVisibles, cambiar, cambiarModo, registrar, iniciar }
+  return { modo, datos, error, camposVisibles, cambiar, cambiarModo, enviar }
 }

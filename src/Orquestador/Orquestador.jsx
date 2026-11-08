@@ -7,7 +7,7 @@ import Certificados from '../Pages/Certificados.jsx'
 import DaDaIA from '../Pages/DaDaIA.jsx'
 import Informacion from '../Pages/Informacion.jsx'
 import Home from '../Home/Home.jsx'
-import Formulario from './Formulario.jsx'
+import FormularioPage from '../Pages/FormularioPage.jsx'
 import useTarjeta from '../Hooks/useTarjeta.js'
 import datosTarjetas from '../data/tarjetas.json'
 
@@ -61,7 +61,7 @@ function Orquestador() {
 
   if (pantalla === 'ingreso') return <Ingreso onIngresar={ingresar} />
   if (pantalla === 'home') return <Home epsNombre={epsNombre} usuario={usuario} tarjetas={tarjeta} onNavegar={irA} />
-  if (pantalla === 'formulario') return <Formulario onIniciarSesion={iniciarSesion} onVolver={() => setPantalla('home')} />
+  if (pantalla === 'formulario') return <FormularioPage onIniciarSesion={iniciarSesion} onVolver={() => setPantalla('home')} />
   if (pantalla === 'agendamiento') return <Agendamiento usuario={usuario} onVolver={volver} />
   if (pantalla === 'actualizacion') return <ActualizacionDatos usuario={usuario} onActualizar={actualizarUsuario} onVolver={volver} />
   if (pantalla === 'certificados') return <Certificados usuario={usuario} epsNombre={epsNombre} sede={sede} onVolver={volver} />

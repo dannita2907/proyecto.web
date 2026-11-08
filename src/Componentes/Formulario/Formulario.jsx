@@ -1,13 +1,10 @@
-import useFormulario from '../Hooks/useFormulario.js'
-import Campos from '../Componentes/Formulario/Campos'
-import Boton from '../Componentes/Formulario/Boton'
-import BotonVolver from '../Componentes/Formulario/BotonVolver'
-import '../Style/formulario.css'
+import Campos from './Campos'
+import Boton from './Boton'
+import BotonVolver from './BotonVolver'
+import '../../Style/formulario.css'
 
-function Formulario({ onIniciarSesion, onVolver }) {
-  const { modo, datos, error, camposVisibles, cambiar, cambiarModo, registrar, iniciar } =
-    useFormulario(onIniciarSesion)
-
+// Componente solo visual: dibuja el formulario con lo que le llega por props
+function Formulario({ modo, datos, error, camposVisibles, onChange, onSubmit, onCambiarModo, onVolver }) {
   return (
     <div className="pantalla fondo-medico">
       <section className="caja-formulario">
@@ -16,7 +13,7 @@ function Formulario({ onIniciarSesion, onVolver }) {
         <Campos
           lista={camposVisibles}
           datos={datos}
-          onCambiar={cambiar}
+          onCambiar={onChange}
           registro={modo === 'registro'}
         />
 
@@ -24,11 +21,11 @@ function Formulario({ onIniciarSesion, onVolver }) {
 
         <Boton
           texto={modo === 'login' ? 'Ingresar' : 'Registrarme'}
-          onClick={modo === 'login' ? iniciar : registrar}
+          onClick={onSubmit}
         />
         <Boton
           texto={modo === 'login' ? 'Crear una cuenta' : 'Ya tengo cuenta'}
-          onClick={() => cambiarModo(modo === 'login' ? 'registro' : 'login')}
+          onClick={() => onCambiarModo(modo === 'login' ? 'registro' : 'login')}
           clase="boton-secundario"
         />
         <BotonVolver onClick={onVolver} />

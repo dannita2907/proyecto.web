@@ -8,6 +8,8 @@ import DaDaIA from '../Pages/DaDaIA.jsx'
 import Informacion from '../Pages/Informacion.jsx'
 import Home from '../Home/Home.jsx'
 import Formulario from './Formulario.jsx'
+import useTarjeta from '../Hooks/useTarjeta.js'
+import datosTarjetas from '../data/tarjetas.json'
 
 // El Orquestador decide qué pantalla se muestra
 function Orquestador() {
@@ -16,6 +18,9 @@ function Orquestador() {
   const [epsNombre, setEpsNombre] = useState(localStorage.getItem('epsNombre') || '')
   const [sede, setSede] = useState(localStorage.getItem('sede') || '')
   const [usuario, setUsuario] = useState(JSON.parse(localStorage.getItem('usuarioActivo')))
+
+  // La lista de tarjetas vive aquí (en el padre) y se reparte por props
+  const { tarjeta } = useTarjeta(datosTarjetas)
 
   // Cambia de pantalla (y de pestaña, si se indica)
   function irA(nuevaPantalla, nuevaPestana) {
@@ -55,7 +60,7 @@ function Orquestador() {
   const volver = () => setPantalla('servicios')
 
   if (pantalla === 'ingreso') return <Ingreso onIngresar={ingresar} />
-  if (pantalla === 'home') return <Home epsNombre={epsNombre} usuario={usuario} onNavegar={irA} />
+  if (pantalla === 'home') return <Home epsNombre={epsNombre} usuario={usuario} tarjetas={tarjeta} onNavegar={irA} />
   if (pantalla === 'formulario') return <Formulario onIniciarSesion={iniciarSesion} onVolver={() => setPantalla('home')} />
   if (pantalla === 'agendamiento') return <Agendamiento usuario={usuario} onVolver={volver} />
   if (pantalla === 'actualizacion') return <ActualizacionDatos usuario={usuario} onActualizar={actualizarUsuario} onVolver={volver} />

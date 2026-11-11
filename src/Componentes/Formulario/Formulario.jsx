@@ -3,7 +3,6 @@ import Boton from './Boton'
 import BotonVolver from './BotonVolver'
 import '../../Style/formulario.css'
 
-// Componente solo visual: dibuja el formulario con lo que le llega por props
 function Formulario({ modo, datos, error, camposVisibles, onChange, onSubmit, onCambiarModo, onVolver }) {
   return (
     <div className="pantalla fondo-medico">

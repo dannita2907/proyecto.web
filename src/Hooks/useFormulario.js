@@ -7,7 +7,7 @@ const vacio = {
 }
 
 export default function useFormulario(onIniciarSesion) {
-  const [modo, setModo] = useState('login') // 'login' o 'registro'
+  const [modo, setModo] = useState('login')
   const [datos, setDatos] = useState(vacio)
   const [error, setError] = useState('')
 
@@ -62,8 +62,9 @@ export default function useFormulario(onIniciarSesion) {
     onIniciarSesion(sinClave)
   }
 
-  // En login solo se piden correo y contraseña
-   const enviar = modo === 'login' ? iniciar : registrar
+  const camposVisibles = modo === 'login' ? campos.filter((c) => c.name === 'correo') : campos
+
+  const enviar = modo === 'login' ? iniciar : registrar
 
   return { modo, datos, error, camposVisibles, cambiar, cambiarModo, enviar }
 }

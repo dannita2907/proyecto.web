@@ -15,8 +15,10 @@ function Orquestador() {
     irA, volver, ingresar, iniciarSesion, cerrarSesion, actualizarUsuario,
   } = useOrquestador()
 
-  if (pantalla === 'ingreso') return <IngresoPage onIngresar={ingresar} />
-  if (pantalla === 'home') return <Home epsNombre={epsNombre} usuario={usuario} tarjetas={tarjeta} onNavegar={irA} />
+  if (pantalla === 'ingreso') 
+    return <IngresoPage onIngresar={ingresar} />
+  if (pantalla === 'home') 
+    return <Home epsNombre={epsNombre} usuario={usuario} tarjetas={tarjeta} onNavegar={irA} />
   if (pantalla === 'formulario') return <FormularioPage onIniciarSesion={iniciarSesion} onVolver={() => irA('home')} />
   if (pantalla === 'agendamiento') return <AgendamientoPage usuario={usuario} onVolver={volver} />
   if (pantalla === 'actualizacion') return <ActualizacionDatosPage usuario={usuario} onActualizar={actualizarUsuario} onVolver={volver} />

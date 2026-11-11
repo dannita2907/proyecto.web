@@ -24,7 +24,7 @@ export default function useOrquestador() {
         setPantalla('home')
     }
 
-    function iniciarSesion (usuyarioNuevo) {
+    function iniciarSesion (usuarioNuevo) {
         setUsuario(usuarioNuevo)
         localStorage.setItem('usuarioActivo', JSON.stringify(usuarioNuevo))
         setPantalla('servicios')

@@ -136,4 +136,4 @@ Abrir la URL local que muestra Vite. Para probar la compilación: `npm run previ
 ## 12. Archivos que conviene saber explicar
 `index.html`, `src/main.jsx`, `src/App.jsx`, `src/Orquestador/Orquestador.jsx`, `src/Hooks/useOrquestador.js`, cada `src/Pages/*Page.jsx`, cada `src/Hooks/use*.js`, `src/services/storage.js`, `src/data/*.json`, `src/Componentes/*`, `src/Style/*.css`.
 
-**Estado de verificación:** los cambios se han guardado en una rama separada; deben ejecutarse `npm run build` y las pruebas manuales en un entorno con dependencias instaladas antes de fusionar con `main`.
+**Estado de verificación:** GitHub Actions completó correctamente la instalación y compilación del proyecto en la rama de correcciones (ejecución #2, conclusión `success`). Faltan pruebas manuales de todas las pantallas en navegador antes de fusionar con `main`.

@@ -62,7 +62,7 @@ button {
   transition: 0.3s;
 }
 
-button:hover {
+.pestanas button:hover {
   background: #0d47a1;
   transform: scale(1.03);
 }

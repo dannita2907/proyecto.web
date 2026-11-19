@@ -15,6 +15,12 @@ function Orquestador() {
     irA, volver, ingresar, iniciarSesion, cerrarSesion, actualizarUsuario,
   } = useOrquestador()
 
+  // Las pantallas privadas requieren una sesión activa.
+  const pantallasPrivadas = ['servicios', 'agendamiento', 'actualizacion', 'certificados', 'dadaia']
+  if (pantallasPrivadas.includes(pantalla) && !usuario) {
+    return <Home epsNombre={epsNombre} usuario={usuario} tarjetas={tarjeta} onNavegar={irA} />
+  }
+
   if (pantalla === 'ingreso') 
     return <IngresoPage onIngresar={ingresar} />
   if (pantalla === 'home') 
@@ -26,9 +32,12 @@ function Orquestador() {
   if (pantalla === 'dadaia') return <DaDaIAPage onVolver={volver} />
   if (pantalla === 'informacion') return <InformacionPage pestanaInicial={pestana} onVolver={volver} />
 
-  return (
-    <Servicios epsNombre={epsNombre} sede={sede} usuario={usuario} onNavegar={irA} onCerrarSesion={cerrarSesion} />
-  )
+  if (pantalla === 'servicios') {
+    return <Servicios epsNombre={epsNombre} sede={sede} usuario={usuario} onNavegar={irA} onCerrarSesion={cerrarSesion} />
+  }
+
+  // Una pantalla desconocida no debe abrir Servicios por defecto.
+  return <Home epsNombre={epsNombre} usuario={usuario} tarjetas={tarjeta} onNavegar={irA} />
 }
 
 export default Orquestador

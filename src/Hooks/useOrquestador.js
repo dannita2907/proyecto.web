@@ -1,54 +1,53 @@
-import {useState } from 'react';
-import useTarjeta from './useTarjeta';
-import datosTarjetas from '../data/tarjetas.json';
+import { useState } from 'react'
+import useTarjeta from './useTarjeta'
+import datosTarjetas from '../data/tarjetas.json'
+import { leerJSON, guardarJSON, leerTexto, guardarTexto, eliminar } from '../services/storage.js'
 
 export default function useOrquestador() {
-    const [pantalla, setPantalla]= useState('ingreso');
-    const [pestana, setPestana]= useState('bienestar');
-    const [epsNombre, setEpsNombre]= useState(localStorage.getItem('epsNombre') || '');
-    const [sede, setSede]= useState(localStorage.getItem('sede') || '');
-    const [usuario, setUsuario] = useState(JSON.parse(localStorage.getItem('usuarioActivo')));
+  const [pantalla, setPantalla] = useState('ingreso')
+  const [pestana, setPestana] = useState('bienestar')
+  const [epsNombre, setEpsNombre] = useState(() => leerTexto('epsNombre'))
+  const [sede, setSede] = useState(() => leerTexto('sede'))
+  const [usuario, setUsuario] = useState(() => leerJSON('usuarioActivo', null))
+  const { tarjeta, agregar } = useTarjeta(datosTarjetas)
 
-    const {tarjeta, agregar} = useTarjeta(datosTarjetas);
+  function irA(nuevaPantalla, nuevaPestana) {
+    if (nuevaPestana) setPestana(nuevaPestana)
+    setPantalla(nuevaPantalla)
+  }
 
-    function irA(nuevaPantalla, nuevaPestana) {
-        if (nuevaPestana) setPestana(nuevaPestana)
-            setPantalla(nuevaPantalla)
-    }
+  function ingresar(nombre, sedeElegida) {
+    setEpsNombre(nombre)
+    setSede(sedeElegida)
+    guardarTexto('epsNombre', nombre)
+    guardarTexto('sede', sedeElegida)
+    setPantalla('home')
+  }
 
-    function ingresar(nombre, sedeElegida) {
-        setEpsNombre(nombre)
-        setSede(sedeElegida)
-        localStorage.setItem('epsNombre', nombre)
-        localStorage.setItem('sede', sedeElegida)
-        setPantalla('home')
-    }
+  function iniciarSesion(usuarioNuevo) {
+    setUsuario(usuarioNuevo)
+    guardarJSON('usuarioActivo', usuarioNuevo)
+    setPantalla('servicios')
+  }
 
-    function iniciarSesion (usuarioNuevo) {
-        setUsuario(usuarioNuevo)
-        localStorage.setItem('usuarioActivo', JSON.stringify(usuarioNuevo))
-        setPantalla('servicios')
-    }
+  function cerrarSesion() {
+    setUsuario(null)
+    eliminar('usuarioActivo')
+    setPantalla('home')
+  }
 
-    function cerrarSesion() {
-        setUsuario(null)
-        localStorage.removeItem('usuarioActivo')
-        setPantalla('home')
-    }
+  function actualizarUsuario(datosNuevos) {
+    if (!usuario) return false
+    const usuarios = leerJSON('usuarios', [])
+    if (!Array.isArray(usuarios)) return false
+    const actualizados = usuarios.map(u => u.correo === usuario.correo ? { ...u, ...datosNuevos } : u)
+    if (!guardarJSON('usuarios', actualizados)) return false
+    const actualizado = { ...usuario, ...datosNuevos }
+    setUsuario(actualizado)
+    guardarJSON('usuarioActivo', actualizado)
+    return true
+  }
 
-    function actualizarUsuario(datosNuevos) {
-        const usuarioNuevo = {...usuario, ...datosNuevos}
-        setUsuario(usuarioNuevo)
-        localStorage.setItem('usuarioActivo', JSON.stringify(usuarioNuevo))
-        const usuarios =JSON.parse(localStorage.getItem('usuarios')) || []
-        const actualizados = usuarios.map((u) => (u.correo === usuario.correo ? { ...u, ...datosNuevos } : u))
-        localStorage.setItem('usuarios', JSON.stringify(actualizados))
-    }
-
-    const volver = () => setPantalla('servicios')
-
-    return {pantalla, pestana, epsNombre, sede, usuario, tarjeta, irA, ingresar, iniciarSesion, cerrarSesion, actualizarUsuario, volver, agregar};
-
+  const volver = () => setPantalla(usuario ? 'servicios' : 'home')
+  return { pantalla, pestana, epsNombre, sede, usuario, tarjeta, irA, volver, ingresar, iniciarSesion, cerrarSesion, actualizarUsuario, agregar }
 }
-
-

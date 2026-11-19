@@ -1,15 +1,5 @@
-function Campo({ etiqueta, tipo = "text", valor, min, onCambio }) {
-  return (
-    <div>
-      <label>{etiqueta}</label>
-      <input
-        type={tipo}
-        value={valor}
-        min={min}
-        onChange={(e) => onCambio(e.target.value)}
-      />
-    </div>
-  );
+import { useId } from 'react'
+export default function Campo({ etiqueta, tipo = 'text', valor, min, onCambio }) {
+  const id = useId()
+  return <div><label htmlFor={id}>{etiqueta}</label><input id={id} type={tipo} value={valor} min={min} onChange={e => onCambio(e.target.value)} /></div>
 }
-
-export default Campo;
